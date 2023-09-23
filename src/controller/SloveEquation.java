@@ -22,22 +22,10 @@ public class SloveEquation extends Menu<String>{
     public void execute(int n) {
         switch (n) {
             case 1 -> {
-                System.out.println("Enter a:");
-                float a = library.inputFloat();
-                System.out.println("Enter b:");
-                float b = library.inputFloat();
-                List<Float> results = equationModel.calculateSuperlative(a, b);
-                displayResults(results);
+                sloveSuperlative();
             }
             case 2 -> {
-                System.out.println("Enter a:");
-                float a = library.inputFloat();
-                System.out.println("Enter b:");
-                float b = library.inputFloat();
-                System.out.println("Enter c:");
-                float c = library.inputFloat();
-                List<Float> results = equationModel.calculateQuadratic(a, b, c);
-                displayResults(results);
+                sloveQuadratic();
             }
             case 3 -> {
                 System.out.println("Exit the program successfully!");
@@ -45,6 +33,26 @@ public class SloveEquation extends Menu<String>{
             }
         }
     }       
+    
+    public void sloveSuperlative(){
+        System.out.println("Enter a:");
+        float a = library.inputFloat();
+        System.out.println("Enter b:");
+        float b = library.inputFloat();
+        List<Float> results = equationModel.calculateSuperlative(a, b);
+        displayResults(results);
+    }
+    
+    public void sloveQuadratic(){
+        System.out.println("Enter a:");
+        float a = library.inputFloat();
+        System.out.println("Enter b:");
+        float b = library.inputFloat();
+        System.out.println("Enter c:");
+        float c = library.inputFloat();
+        List<Float> results = equationModel.calculateQuadratic(a, b, c);
+        displayResults(results);
+    }
     
     public void displayResults(List<Float> results) {
         if (results.isEmpty()) {
